@@ -11,7 +11,21 @@ This blocklet is a static project, which means this is a frontend application. I
   - favicon.svg - favicon
   - index.html - main html file, template for react
 - screenshots/ - Screenshots
+- server
+  - db
+    - database.sqlite - SQLite database file
+  - connect.js - Database connection setup
+  - route.js - Routing logic
 - src/ - Client side code (A standard react app structure)
+  - component - reusable components
+    - ProfileEditor 
+      - ProfileEditor.js
+      - ProfileEditor.test.js
+    - TypographyInfo
+      - TypographyInfo.js
+      - TypographyInfo.test.js
+  - config
+    - apiConfig.js
 - .env - Environment variables
 - .env.local - Local environment variables
 - .eslintrc.js - ESLint configuration
@@ -145,6 +159,36 @@ After developing a blocklet, you may need to bundle it. Use `npm run bundle` com
 
 The code is licensed under the Apache 2.0 license found in the
 [LICENSE](LICENSE) file.
-# blocklet-profile-demo
+
 # blocklet-profile
-# blocklet-profile
+### Setup Database
+Navigate to the server directory to create and initialize the SQLite database:
+```shell
+cd server
+node connect.js
+  ```
+#### If everything is set up correctly, you should see similar output in the console:
+```shell
+Connected to the SQLite database.
+  ```
+### Start Backend Server
+```shell
+node route.js
+  ```
+#### If everything is set up correctly, you should see similar output in the console:
+  ```shell
+Job Dispatch API running on port 3030!
+Connected to the SQLite database.
+  ```
+### Launch Frontend Application
+```shell
+npm start
+  ```
+#### This command compiles and starts the frontend application. If everything is set up correctly, you will see:
+  ```shell
+Compiled successfully!
+You can now view your application in the browser.
+
+Local: http://localhost:8093/
+  ```
+

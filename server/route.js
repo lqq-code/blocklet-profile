@@ -86,7 +86,7 @@ app.put('/api/update/users/:id', cors(corsOptions), (req, res) => {
 
 
 // SERVER PORT
-const HTTP_PORT = process.env.PORT || 4015;
+const HTTP_PORT = process.env.PORT || 3030;
 
 // START SERVER
 app.listen(HTTP_PORT, () => {

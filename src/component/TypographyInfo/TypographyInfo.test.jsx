@@ -29,6 +29,6 @@ describe('TypographyInfo Component', () => {
     );
 
     const skeleton = getByTestId('skeleton');
-    expect(skeleton).toBeInTheDocument(); // Check if Skeleton (loading indicator) is rendered
+    expect(skeleton).toBeInTheDocument(); 
   });
 });
