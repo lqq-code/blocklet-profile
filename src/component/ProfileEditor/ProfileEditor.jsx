@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState } from 'react';
 import { TextField, Button, Card, CardContent, CardActions, Grid } from '@mui/material';
 
 const ProfileEditor = ({ profile, onSave, onCancel }) => {
@@ -7,8 +7,9 @@ const ProfileEditor = ({ profile, onSave, onCancel }) => {
     const [formData, setFormData] = useState({ name, email, phone });
     const [errors, setErrors] = useState({ name: '', email: '', phone: '' });
 
-    const emailRegex = useMemo(() => /^[^\s@]+@[^\s@]+\.[^\s@]+$/, []);
-    const phoneRegex = useMemo(() => /^\+?[1-9]\d{9,13}$/, []);
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const phoneRegex = /^\+?[1-9]\d{9,13}$/;
+
 
     const validateField = (name, value) => {
         let error = '';
