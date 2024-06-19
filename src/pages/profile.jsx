@@ -24,7 +24,6 @@ const Profile = () => {
       setProfile(response.data.data);
       setLoading(false);
     } catch (error) {
-      console.error('Error fetching user profile:', error);
       setErrorMessage('Failed to fetch user profile. Please try again later.');
       setLoading(false);
     }
@@ -58,21 +57,21 @@ const Profile = () => {
     setSuccessMessage('');
   };
 
- 
+
 
   return (
-    <Container sx={{ maxWidth: 600,  justifyContent: 'center', alignItems: 'center',}}>
+    <Container sx={{ maxWidth: 400, justifyContent: 'center', alignItems: 'center', }}>
       <Box mt={4}>
-        <Card sx={{ maxWidth: 600, margin: 'auto', mt: 10, p: 10 }}>
+        <Card sx={{ maxWidth: 400, margin: 'auto', mt: 10, p: 2 }}>
           <CardContent>
             <h1>Personal Information</h1>
             {isEditing ? (
               <ProfileEditor profile={profile} onSave={handleSave} onCancel={handleCancel} />
             ) : (
-              <div style={{display:'inline-grid'}}>
-               <TypographyInfo label="Name" value={profile && profile.name} loading={loading} />
-               <TypographyInfo label="Email" value={profile && profile.email} loading={loading} />
-               <TypographyInfo label="Phone" value={profile && profile.phone} loading={loading} />
+              <div style={{ display: 'inline-grid' }}>
+                <TypographyInfo label="Name" value={profile && profile.name} loading={loading} />
+                <TypographyInfo label="Email" value={profile && profile.email} loading={loading} />
+                <TypographyInfo label="Phone" value={profile && profile.phone} loading={loading} />
               </div>
             )}
           </CardContent>
@@ -80,7 +79,7 @@ const Profile = () => {
             {!isEditing && (
               <Grid container justifyContent="center" spacing={2}>
                 <Grid item>
-                  <Button  variant="contained"  onClick={handleEdit}>Edit</Button>
+                  <Button variant="contained" onClick={handleEdit}>Edit</Button>
                 </Grid>
                 <Grid item>
                   <Button variant="outlined" onClick={() => navigate('/')}>Back Home</Button>
