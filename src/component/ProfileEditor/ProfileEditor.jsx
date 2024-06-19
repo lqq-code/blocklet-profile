@@ -8,7 +8,8 @@ const ProfileEditor = ({ profile, onSave, onCancel }) => {
   const [errors, setErrors] = useState({ name: '', email: '', phone: '' });
 
   const emailRegex = useMemo(() => /^[^\s@]+@[^\s@]+\.[^\s@]+$/, []);
-  const phoneRegex = useMemo(() => /^\+?[1-9]\d{1,14}$/, []);
+  const phoneRegex = useMemo(() => /^\+?[1-9]\d{9,13}$/, []);
+
 
   const validateField = (name, value) => {
     let error = '';
